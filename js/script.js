@@ -6,15 +6,20 @@ document.querySelector('#nav-close').onclick = () =>{
     navbar.classList.remove('active');
 }
 
-let searchForm = document.querySelector('.search-form');
 
-document.querySelector('#search-btn').onclick = () =>{
+//----------- Toggle Search Form Updated----------------//
+const searchBtn = document.getElementById('search-btn');
+const closeSearch = document.getElementById('close-search');
+const searchForm = document.querySelector('.search-form');
+
+searchBtn.addEventListener('click', () => {
     searchForm.classList.add('active');
-}
+});
 
-document.querySelector('#close-search').onclick = () =>{
+closeSearch.addEventListener('click', () => {
     searchForm.classList.remove('active');
-}
+});
+
 window.onscroll=()=>{
     navbar.classList.remove('active');
     if(window.scrollY>0){
